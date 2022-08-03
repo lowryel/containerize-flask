@@ -1,3 +1,7 @@
+setup:
+	python3 -m venv hello
+	source hello/bin/activate
+
 install:
 	# This should be run from inside a virtualenv
 	pip install --upgrade pip &&\
@@ -10,6 +14,7 @@ test:
 
 lint:
 	# This is a linter for Python source code linter: https://www.pylint.org/
+	hadolint Dockerfile
 	pylint --disable=R,C,W1203 hello.py
 
 all: install lint test
