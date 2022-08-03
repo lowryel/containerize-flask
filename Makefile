@@ -14,7 +14,7 @@ test:
 
 lint:
 	# This is a linter for Python source code linter: https://www.pylint.org/
-	hadolint Dockerfile
+	# hadolint Dockerfile
 	pylint --disable=R,C,W1203 hello.py
 
 all: install lint test
